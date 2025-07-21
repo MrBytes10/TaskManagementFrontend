@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useCallback } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation" // Page router// use Approuter for complex apps
 import { apiFetch } from "@/lib/api"
 import { API_ENDPOINTS } from "@/lib/config"
 import type { Task, TaskStatus } from "@/lib/types"
