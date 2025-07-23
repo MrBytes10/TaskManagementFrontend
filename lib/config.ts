@@ -1,4 +1,4 @@
-export const API_BASE_URL = "https://localhost:7015/api"; // Replace with your actual backend URL
+export const API_BASE_URL = "http://localhost:8080/api"; // Replace with your actual backend URL
 
 export const API_ENDPOINTS = {
   SIGNUP: "/auth/signup",
