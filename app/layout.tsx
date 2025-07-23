@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
+import { AuthProvider } from "@/components/AuthContext"; // for react context state management
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,9 +22,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <main className="container mx-auto p-4">{children}</main>
+        <AuthProvider> {/* this is the provider for the context, wrapa Navbar and the children*/}
+          <Navbar />
+          <main className="container mx-auto p-4">{children}</main>
+        </AuthProvider>
       </body>
     </html>
-  )
+  );
 }
+// export default function RootLayout({ children }) {
+//   return (
+//     <html lang="en">
+//       <body>
+//         <AuthProvider>{children}</AuthProvider>
+//       </body>
+//     </html>
+//   );
+// }
